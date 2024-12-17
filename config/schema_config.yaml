@@ -2,20 +2,91 @@
 
 protein:
     represented_as: node
-    preferred_id: uniprot
-    input_label: uniprot_protein
+    preferred_id: name
+    input_label: protein
+    properties:
+        type: str
+        conforms_to: str
+        bioChemInteraction: str
+        identifier: str
+        name: str
+        sameAs: str
+        taxonomicRange: str
+        included_in_dataset: str
+        inChIKey: str
 
-disease:
+biochemicalentity:
+    is_a: biological entity
     represented_as: node
-    preferred_id: doid
-    input_label: do_disease
+    preferred_id: name
+    input_label: biochemicalentity
+    properties:
+        type: str
+        name: str
+        brenda_identifier: str
+        included_in_dataset: str
 
-protein interaction:
-    is_a: pairwise molecular interaction
-    represented_as: edge
-    input_label: protein_protein_interaction
+molecularentity:
+    is_a: molecular entity
+    represented_as: node
+    preferred_id: name
+    input_label: molecularentity
+    properties:
+        type: str
+        name: str
+        identifier: str
+        included_in_dataset: str
+        url: str
+        InChI: str
+        InChIKey: str
+        iupac_name: str
+        smiles: str
+        molecular_formula: str
+        monoisotopic_molecular_weight: str
+        molecular_weight: str
+        image: str
+        description: str
+        has_representation: str
+        conforms_to: str
 
-protein to disease association:
-    is_a: association
+dataset:
+    represented_as: node
+    preferred_id: name
+    input_label: dataset
+    properties:
+        type: str
+        conforms_to: str
+        name: str
+        description: str
+        datePublished: str
+        keywords: str
+        license: str
+        inLanguage: str
+        url: str
+        identifier: str
+        citation: str
+        measurementTechnique: str
+        isAccessibleForFree: str
+        dateCreated: str
+        dateModified: str
+        isPartOf: str
+        taxonomicRange: str
+
+taxon:
+    is_a: organism taxon
+    represented_as: node
+    preferred_id: name
+    input_label: taxon
+    properties:
+        type: str
+        conforms_to: str
+        included_in_dataset: str
+        name: str
+        vernacular_name: str
+        parent_taxon: str
+        taxon_rank: str
+        identifier: str
+
+genotype to gene association:
     represented_as: edge
-    input_label: protein_disease_association
+    input_label: has_taxonomic_range
